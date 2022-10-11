@@ -3,6 +3,7 @@ package com.openclassrooms.mygalery
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.GridView
+import androidx.recyclerview.widget.OrientationHelper
 import java.util.ArrayList
 
 private lateinit var  images :List<GridViewModal>
@@ -43,10 +44,12 @@ class MainActivity : AppCompatActivity() {
         images=images+ GridViewModal(R.drawable.cat10,"Image 1")
         images=images+GridViewModal( R.drawable.cat2,"Image 1")
         images=images+ GridViewModal(R.drawable.cat8,"Image 1")
+
         gridview=findViewById(R.id.gridview)
 
       var  imageadapter=CustomizedGalleryAdapter(this@MainActivity,images)
         println("$imageadapter + ${images.size}")
       gridview.adapter=imageadapter
+
     }
 }
